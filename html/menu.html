@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Personal</title>
+    <link  rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../CSS/estilos.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="card card-wallet text-center">
+            <h2>Bienvenido, <span id="user-email">Usuario</span></h2>
+            <p class="text-muted">Tu saldo actual es:</p>
+            <div class="d-flex justify-content-center align-items-center mb-4 gap-3">
+                <div id="saldo-display" class="balance-display">Cargando...</div>
+                <button id="btn-toggle-saldo" class="btn btn-outline-secondary border-0 bg-transparent">
+                    <i id="icono-ojo" class="bi bi-eye-fill fs-4"></i>
+                </button>
+
+            </div>
+
+            <div class="row g-3">
+                <div class="col-12 col-md-4">
+                    <a href="deposito.html" class="btn btn-outline-primary btn-wallet w-100">Depositar</a>
+                </div>
+                <div class="col-12 col-md-4">
+                    <a href="sendmoney.html" class="btn btn-outline-primary btn-wallet w-100">Enviar Dinero</a>
+                </div>
+                <div class="col-12 col-md-4">
+                    <a href="transacciones.html" class="btn btn-outline-primary btn-wallet w-100">Ultimas transacciones</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/menu.js"></script>
+</body>
+</html>

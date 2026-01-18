@@ -1,0 +1,74 @@
+
+:root {
+    --primary-wallet: #000000;
+    --accent-wallet: #18bc9c;
+    --bg-light: #211849;
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.card-wallet {
+    background-color: #e9e7e7da;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 2rem; /
+}
+
+.btn-wallet {
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background-color: var(--accent-wallet);
+}
+
+.balance-display {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-wallet);
+}
+.btn-primary {
+    background-color: var(--accent-wallet);
+    color: white;
+    border-color: grey;
+}
+.btn-outline-primary {
+    background-color: var(--accent-wallet);
+    color: white;
+    border-color: grey;
+}
+.btn-secondary {
+    background-color: var(--accent-wallet);
+    border-color: gray;
+}
+
+.btn-dark {
+    background-color: var(--accent-wallet);
+    color: white;
+    border: none;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    max-width: 100px;
+    left: 100%;
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .card-wallet {
+        padding: 1.5rem;
+    }
+
+    .balance-display {
+        font-size: 1.8rem;
+    }
+
+    .btn-wallet,
+    .btn-primary {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}
