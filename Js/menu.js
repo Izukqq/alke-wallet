@@ -11,7 +11,7 @@ if (!saldoGuardado) {
 
 if (!emailGuardado) {
     alert("¡Alto ahí! Debes iniciar sesión primero.");
-    window.location.href = '../index.html'; 
+    window.location.href = '../html/login.html'; 
 } else {
     if (correoUsuario) {
         correoUsuario.textContent = emailGuardado;
