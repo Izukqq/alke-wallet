@@ -1,74 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap');
 
 :root {
-    --primary-wallet: #000000;
-    --accent-wallet: #18bc9c;
-    --bg-light: #211849;
+    
+    --bg-dark: #0f0c29;      
+    --bg-gradient: linear-gradient(135deg, #0f0c29, #130e50, #24243e); 
+    
+    --glass-bg: rgba(135, 92, 148, 0.212); 
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    --primary-neon: #7b4397;  
+    --secondary-neon: #7c2027; 
+    --accent-cyan: #4b8f9c;  
+    
+    --text-main: #ffffff;
+    --text-muted: #ffffff;
 }
 
 body {
-    background-color: var(--bg-light);
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: '¨Poppins', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    min-height: 100vh;
+    background-attachment: fixed; 
 }
 
-.card-wallet {
-    background-color: #e9e7e7da;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    padding: 2rem; /
+
+.card-wallet, .card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 2.5rem;
+    color: var(--text-main);
 }
 
-.btn-wallet {
-    border-radius: 10px;
-    padding: 12px 20px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    background-color: var(--accent-wallet);
+
+.card-wallet h1, .card-wallet h2, .card-wallet h3, .card h4 {
+    color: var(--text-main);
+    font-weight: 700;
 }
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
 
 .balance-display {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--primary-wallet);
-}
-.btn-primary {
-    background-color: var(--accent-wallet);
-    color: white;
-    border-color: grey;
-}
-.btn-outline-primary {
-    background-color: var(--accent-wallet);
-    color: white;
-    border-color: grey;
-}
-.btn-secondary {
-    background-color: var(--accent-wallet);
-    border-color: gray;
+    font-size: 3.5rem;
+    font-weight: 700;
+  
+    background: linear-gradient(to right, #abdce7, #109fd8e1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 1.5rem 0;
+    text-shadow: 0px 0px 20px rgba(0, 210, 255, 0.3); /* Resplandor azul */
 }
 
-.btn-dark {
-    background-color: var(--accent-wallet);
-    color: white;
+.btn-wallet, .btn-primary , .btn-success{
+   
+    background: linear-gradient(45deg, #FF512F 0%, #DD2476 100%);
     border: none;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    max-width: 100px;
-    left: 100%;
-    transition: color 0.3s ease;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    padding: 14px 30px;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(221, 36, 118, 0.4); 
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.btn-outline-primary:hover {
+    background: linear-gradient(45deg, #FF512F 0%, #DD2476 100%);
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(221, 36, 118, 0.6);
+    transform: translateY(-3px) scale(1.02);
+}
+.modal,
+.modal-content {
+    background-color: var(--bg-gradient); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+    transform: translateY(-3px);
+}
+.btn-secondary, .btn-info {
+    background: linear-gradient(45deg, #1fa2ff 0%, #12d8fa 100%);
+    border: none;
+    border-radius: 50px;
+    color: #e4e4e4; 
+    font-weight: 700;
+    padding: 14px 30px;
+    box-shadow: 0 4px 15px rgba(18, 216, 250, 0.3);
 }
 
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(18, 216, 250, 0.5);
+    color: #f3f3f3;
+}
+.btn-dark{
+    background-color: #12d8fa;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 700;
+    padding: 14px 30px;
+    height: 50px;
+    width: 109px;
+    margin-block: 10px;
+    box-shadow: 0 4px 15px rgba(18, 216, 250, 0.3)
+}
+.btn-dark:hover {
+    background: linear-gradient(45deg, #ff6b4a 0%, #f03e8c 100%);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(221, 36, 118, 0.6);
+    color: #fff;
+    font-family: 'poppins', sans-serif;
+}
+.btn-seleccionar {
+    background: linear-gradient(45deg, #1fa2ff 0%, #12d8fa 100%);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 700;
+    padding: 14px 30px;
+    box-shadow: 0 4px 15px rgba(56, 239, 125, 0.3);
+
+}
+input.form-control {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 15px;
+    padding: 12px;
+
+}
+input.form-control:focus {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: var(--accent-cyan);
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+.table-responsive,
+.table-hover,
+table thead th,
+table tbody td {
+    background-color: transparent !important;
+    color: #e3ebecd8 !important;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    
+}
+.table td, 
+.table th {
+    color: #ffffff; /* Fuerza bruta color blanco */
+    opacity: 1 !important;
+    border-color: #21b4ced8;
+}
 @media (max-width: 768px) {
-    .card-wallet {
-        padding: 1.5rem;
-    }
-
     .balance-display {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
     }
+    .btn-wallet {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
 
-    .btn-wallet,
-    .btn-primary {
-        padding: 10px 16px;
-        font-size: 0.9rem;
-    }
+
+input.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important; 
+    opacity: 1; 
+}
+
+input.form-control {
+    color: white !important;
 }
