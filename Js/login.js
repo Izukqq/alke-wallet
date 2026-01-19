@@ -1,63 +1,52 @@
-const form = document.getElementById('loginForm');
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
-const errorBox = document.getElementById('loginError');
+$(document).ready(function () {
+  // Seleccionar elementos del DOM
+  const $form = $('#loginForm');
+  const $emailInput = $('#email');
+  const $passwordInput = $('#password');
+  const $errorBox = $('#loginError');
 
-if (!form) {
-  console.warn('No se encontró el formulario loginForm en el DOM');
-} else {
-  form.addEventListener('submit', function (event) {
+  // Escuchar el evento submit del formulario
+  $form.on('submit', function (event) {
     event.preventDefault();
     
-    if (errorBox) {
-      errorBox.textContent = '';
-      errorBox.classList.remove('text-danger', 'text-success');
-    }
+    // Limpiar errores previos
+    $errorBox.text('').removeClass('text-danger text-success');
 
-    const email = (emailInput && emailInput.value || '').trim();
-    const password = passwordInput ? passwordInput.value : '';
+    // Obtener y limpiar valores
+    const email = $emailInput.val().trim();
+    const password = $passwordInput.val();
 
+    // Validación 1: Email vacío
     if (!email) {
-      if (errorBox) { 
-        errorBox.classList.add('text-danger'); 
-        errorBox.textContent = 'Introduce tu email.'; 
-      }
+      $errorBox.addClass('text-danger').text('Introduce tu email.');
       return;
     }
     
+    // Validación 2: Formato de email válido
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      if (errorBox) { 
-        errorBox.classList.add('text-danger'); 
-        errorBox.textContent = 'Email no válido.'; 
-      }
+      $errorBox.addClass('text-danger').text('Email no válido.');
       return;
     }
     
+    // Validación 3: Contraseña vacía
     if (!password) {
-      if (errorBox) { 
-        errorBox.classList.add('text-danger'); 
-        errorBox.textContent = 'Introduce tu contraseña.'; 
-      }
+      $errorBox.addClass('text-danger').text('Introduce tu contraseña.');
       return;
     }
     
+    // Validación 4: Contraseña con mínimo 6 caracteres
     if (password.length < 6) {
-      if (errorBox) { 
-        errorBox.classList.add('text-danger'); 
-        errorBox.textContent = 'La contraseña debe tener al menos 6 caracteres.'; 
-      }
+      $errorBox.addClass('text-danger').text('La contraseña debe tener al menos 6 caracteres.');
       return;
     }
 
+    // Si todas las validaciones pasaron: guardar email y redirigir
     sessionStorage.setItem('userEmail', email);
-
-    if (errorBox) { 
-      errorBox.classList.add('text-success'); 
-      errorBox.textContent = 'Accediendo...'; 
-    }
+    $errorBox.addClass('text-success').text('Accediendo...');
     
+    // Esperar 800ms antes de redirigir a menu.html
     setTimeout(() => { 
       window.location.href = '../html/menu.html'; 
     }, 800);
   });
-}
+});

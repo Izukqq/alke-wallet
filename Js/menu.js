@@ -1,47 +1,47 @@
-const correoUsuario = document.getElementById('user-email');
-const saldoPantalla = document.getElementById('saldo-display');
+$(document).ready(function () {
+  // Seleccionar elementos del DOM
+  const $userEmail = $('#user-email');
+  const $saldoPantalla = $('#saldo-display');
+  const $btnOjo = $('#btn-toggle-saldo');
+  const $iconoOjo = $('#icono-ojo');
 
-const emailGuardado = sessionStorage.getItem('userEmail');
-let saldoGuardado = sessionStorage.getItem('miSaldo');
+  // Obtener datos del sessionStorage
+  const emailGuardado = sessionStorage.getItem('userEmail');
+  let saldoGuardado = sessionStorage.getItem('miSaldo');
 
-if (!saldoGuardado) { 
+  // Ya que no hay saldo, establecer valor por defecto (150 BTC ojalá jajaja)
+  if (!saldoGuardado) {
     saldoGuardado = "150";
     sessionStorage.setItem('miSaldo', saldoGuardado);
-}
+  }
 
-if (!emailGuardado) {
+  //  si no hay email, enviar a login (obligar a que se loguee)
+  if (!emailGuardado) {
     alert("¡Alto ahí! Debes iniciar sesión primero.");
-    window.location.href = '../index.html'; 
-} else {
-    if (correoUsuario) {
-        correoUsuario.textContent = emailGuardado;
-    }
+    window.location.href = '../html/login.html';
+  } else {
+    // Mostrar email 
+    $userEmail.text(emailGuardado);
     
-    if (saldoPantalla) {
-        saldoPantalla.textContent = saldoGuardado + " BTC";
+    // ver saldo inicial
+    $saldoPantalla.text(saldoGuardado + " BTC");
+  }
+
+  // Controlar si el saldo está visible
+  let saldoVisible = true;
+
+  
+  $btnOjo.on('click', function () {
+    if (saldoVisible) {
+      // Ocultar saldo
+      $saldoPantalla.text('****');
+      $iconoOjo.removeClass('bi-eye-fill').addClass('bi-eye-slash-fill');
+      saldoVisible = false;
+    } else {
+      // Mostrar saldo
+      $saldoPantalla.text(saldoGuardado + " BTC");
+      $iconoOjo.removeClass('bi-eye-slash-fill').addClass('bi-eye-fill');
+      saldoVisible = true;
     }
-}
-
-const btnOjo = document.getElementById('btn-toggle-saldo');
-const iconoOjo = document.getElementById('icono-ojo');
-
-let saldoVisible = true; 
-
-if (btnOjo) {
-    btnOjo.addEventListener('click', () => {
-        
-        if (saldoVisible) {
-            saldoPantalla.textContent = "****";
-            iconoOjo.classList.remove('bi-eye-fill');
-            iconoOjo.classList.add('bi-eye-slash-fill');
-            saldoVisible = false;
-            
-        } else {
-            saldoPantalla.textContent = saldoGuardado + " BTC";
-            iconoOjo.classList.remove('bi-eye-slash-fill');
-            iconoOjo.classList.add('bi-eye-fill');
-            saldoVisible = true;
-        }
-        
-    });
-}
+  });
+});
