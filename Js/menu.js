@@ -19,11 +19,14 @@ $(document).ready(function () {
   if (!emailGuardado) {
     alert("¡Alto ahí! Debes iniciar sesión primero.");
 <<<<<<< HEAD
+<<<<<<< HEAD
     window.location.href = '../html/login.html';
   } else {
     // Mostrar email 
     $userEmail.text(emailGuardado);
 =======
+=======
+>>>>>>> feature/depositos
     window.location.href = '../html/login.html'; 
 } else {
     if (correoUsuario) {
