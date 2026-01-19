@@ -18,10 +18,18 @@ $(document).ready(function () {
   //  si no hay email, enviar a login (obligar a que se loguee)
   if (!emailGuardado) {
     alert("¡Alto ahí! Debes iniciar sesión primero.");
+<<<<<<< HEAD
     window.location.href = '../html/login.html';
   } else {
     // Mostrar email 
     $userEmail.text(emailGuardado);
+=======
+    window.location.href = '../html/login.html'; 
+} else {
+    if (correoUsuario) {
+        correoUsuario.textContent = emailGuardado;
+    }
+>>>>>>> feature/transacciones
     
     // ver saldo inicial
     $saldoPantalla.text(saldoGuardado + " BTC");
