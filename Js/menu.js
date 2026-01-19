@@ -18,23 +18,12 @@ $(document).ready(function () {
   //  si no hay email, enviar a login (obligar a que se loguee)
   if (!emailGuardado) {
     alert("¡Alto ahí! Debes iniciar sesión primero.");
-<<<<<<< HEAD
-<<<<<<< HEAD
-    window.location.href = '../html/login.html';
-  } else {
-    // Mostrar email 
-    $userEmail.text(emailGuardado);
-=======
-=======
->>>>>>> feature/depositos
     window.location.href = '../html/login.html'; 
-} else {
-    if (correoUsuario) {
-        correoUsuario.textContent = emailGuardado;
-    }
->>>>>>> feature/transacciones
+  } else {
+    // Mostrar email del usuario
+    $userEmail.text(emailGuardado);
     
-    // ver saldo inicial
+    // Mostrar saldo inicial
     $saldoPantalla.text(saldoGuardado + " BTC");
   }
 
@@ -56,3 +45,4 @@ $(document).ready(function () {
     }
   });
 });
+// Forzando actualizacion

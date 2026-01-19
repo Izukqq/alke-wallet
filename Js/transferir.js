@@ -203,4 +203,4 @@ $(document).ready(function () {
   });
 });
 
-// Actualización final v1.0
+// Forzando actualizacion
