@@ -18,7 +18,7 @@ $(document).ready(function () {
   //  si no hay email, enviar a login (obligar a que se loguee)
   if (!emailGuardado) {
     alert("¡Alto ahí! Debes iniciar sesión primero.");
-    window.location.href = '../html/login.html'; 
+    window.location.href = '../html/Login.html'; 
   } else {
     // Mostrar email del usuario
     $userEmail.text(emailGuardado);
